@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Fearfry
-{
-    public interface Item
-    {
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+namespace Fearfry {
+    public interface Item {
     }
 }

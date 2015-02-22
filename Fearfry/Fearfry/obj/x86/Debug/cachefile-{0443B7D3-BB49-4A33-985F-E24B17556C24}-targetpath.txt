@@ -1,0 +1,8 @@
+Content\Default.xnb
+Content\LEFT.xnb
+Content\MID.xnb
+Content\RIGHT.xnb
+Content\PLAY.xnb
+Content\QUIT.xnb
+Content\BigDefault.xnb
+Content\Inventory.xnb
