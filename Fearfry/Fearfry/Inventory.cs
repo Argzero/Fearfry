@@ -37,6 +37,16 @@ namespace Fearfry
         public override void Draw(SpriteBatch batch)
         {
             batch.Draw(background, Rect, Color.White);
+            int y = Rect.Height / 10;
+            int height = 8 * Rect.Height / 10;
+            int width = 8 * Rect.Height / 10;
+            int x = Rect.Height / 10;
+
+            foreach (Item item in Items)
+            {
+                item.Draw(batch);
+                x += Rect.Height / 10;
+            }
         }
     }
 }

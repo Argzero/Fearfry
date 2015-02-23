@@ -127,7 +127,7 @@ namespace Fearfry {
             PlayerImages[0] = Content.Load<Texture2D>("LEFT");
             PlayerImages[1] = Content.Load<Texture2D>("RIGHT");
             PlayerImages[2] = Content.Load<Texture2D>("MID");
-            player = new Player(new Rectangle(100, 400, 32, 64), PlayerImages);
+            player = new Player(new Rectangle(100, 200, 108, 272), PlayerImages);
             ObjectsInScene.Add(player);
 
             // Menu
@@ -138,6 +138,11 @@ namespace Fearfry {
             images["inventory"] = Content.Load<Texture2D>("Inventory");
             inventory = new Inventory(images["inventory"], new Rectangle(0,0,Width, Height/6));
             ObjectsInScene.Add(inventory);
+            ObjectsInScene.Add(new Fridge(new Vector2(0, 282), new Vector2(108, 190), Content.Load<Texture2D>("Fridge"), "FRIDGE"));
+            ObjectsInScene.Add(new Sink(new Vector2(324, 320), new Vector2(108, 90), Content.Load<Texture2D>("Sink"), "SINK"));
+            ObjectsInScene.Add(new Cabinet(new Vector2(432, 200), new Vector2(108, 90), Content.Load<Texture2D>("Cabinet"), "CABINET"));
+            ObjectsInScene.Add(new Stove(new Vector2(216, 320), new Vector2(108, 90), Content.Load<Texture2D>("Stove"), "STOVE"));
+            ObjectsInScene.Add(new Counter(new Vector2(108, 320), new Vector2(108, 90), Content.Load<Texture2D>("Counter"), "COUNTER"));
         }
 
         /// <summary>
@@ -230,9 +235,13 @@ namespace Fearfry {
         /// <param name="gameTime">gameTime</param>
         public void PlayDraw(GameTime gameTime) {
             spriteBatch.Begin();
-            foreach (InSceneObject iso in ObjectsInScene) {
+            InSceneObject iso;
+            for(int i = 1; i< ObjectsInScene.Count; i++) {
+                iso = ObjectsInScene[i];
                 iso.Draw(spriteBatch);
             }
+
+            ObjectsInScene[0].Draw(spriteBatch);
             spriteBatch.End();
             // TODO: Add your drawing code here
         }

@@ -24,7 +24,7 @@ namespace Fearfry
 
             // Set up right-facing textures
             Textures["Right"] = new Texture2D[1];
-            Textures["Right"][0] = textures[1];
+            Textures["Right"][0] = textures[0];
 
             Textures["Middle"] = new Texture2D[1];
             Textures["Middle"][0] = textures[2];
@@ -50,7 +50,7 @@ namespace Fearfry
 
         public override void Draw(SpriteBatch batch)
         {
-            batch.Draw(TextureArray[0], Rect, Color.White);
+            batch.Draw(TextureArray[0], Rect, null, Color.White, 0, Vector2.Zero, (PlayerDirection == Direction.R)? SpriteEffects.FlipHorizontally:SpriteEffects.None, 0);
         }
     }
 }
